@@ -12,7 +12,7 @@ const mockProducts = [
   },
   {
     id: "2",
-    name: "Leather Backpack",
+    name: "Leather Backpacks",
     price: 129.99,
     description:
       "Premium leather backpack with multiple compartments for everyday use.",
