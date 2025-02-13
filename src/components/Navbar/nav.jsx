@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ShoppingCart, Store } from "lucide-react";
 import { useStore } from "../../store/productStore";
-import Logo from "../Logo/logo"
+import Logo from "../Logo/logo";
 
 export function Navbar() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export function Navbar() {
             onClick={() => navigate("/")}
             className="text-2xl font-bold cursor-pointer text-gray-800 hover:text-primary transition-colors"
           >
-            <Logo/>
+            <Logo />
           </h1>
           <div className="flex items-center space-x-6">
             <button
