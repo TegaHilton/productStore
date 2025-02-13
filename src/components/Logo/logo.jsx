@@ -1,6 +1,6 @@
 export default function Logo() {
     return (
-      <svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+      <svg width="150" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#001f3f" stopOpacity="1" />
