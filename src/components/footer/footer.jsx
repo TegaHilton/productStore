@@ -33,14 +33,14 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
             <p className="text-gray-600">
-              Email: support@ecoshop.com
+              Email: support@Shopverse.com
               <br />
               Phone: (555) 123-4567
             </p>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
-          © 2024 EcoShop. All rights reserved.
+          © 2024 ShopVerse. All rights reserved.
         </div>
       </div>
     </footer>
