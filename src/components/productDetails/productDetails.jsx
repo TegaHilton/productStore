@@ -19,7 +19,7 @@ export default function ProductDetails() {
     return (
       <div className="min-h-screen flex flex-col bg-[#F5D7DB]  ">
         <Navbar />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow container mx-auto px-4 py-8 ">
           <button
             onClick={() => navigate("/shop")}
             className="flex items-center gap-2 text-primary hover:text-gray-800 transition-colors mb-6"
@@ -37,7 +37,7 @@ export default function ProductDetails() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5D7DB] pt-20">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto pt-20 px-4 py-8">
         <button
           onClick={() => navigate("/shop")}
           className="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all text-primary hover:text-gray-800"

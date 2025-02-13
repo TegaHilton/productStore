@@ -23,7 +23,7 @@ export default function Shop() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5D7DB] pt-20">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8 pt-20">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <h1 className="text-3xl font-bold text-gray-800">All Products</h1>
           <div className="flex w-full md:w-auto gap-2">

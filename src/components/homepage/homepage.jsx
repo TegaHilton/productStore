@@ -15,7 +15,7 @@ export default function App() {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative h-[600px] mb-12 overflow-hidden">
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 pt-28">
             <img
               src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070"
               alt="Shopping Experience"
@@ -51,7 +51,7 @@ export default function App() {
         </section>
 
         {/* Featured Categories */}
-        <section className="container mx-auto px-4 mb-16">
+        <section className="container top mx-auto px-4 mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
             Shop by Category
           </h2>

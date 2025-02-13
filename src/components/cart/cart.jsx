@@ -20,7 +20,7 @@ export default function Cart() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5D7DB] pt-20">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-8 pt-20">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800">Shopping Cart</h1>
           <button
