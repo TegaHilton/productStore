@@ -35,7 +35,7 @@ export function Footer() {
             <p className="text-gray-600">
               Email: support@Shopverse.com
               <br />
-              Phone: (555) 123-4567
+              Phone: (555) 1230-4567
             </p>
           </div>
         </div>
