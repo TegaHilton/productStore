@@ -10,7 +10,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md py-4">
-      <div className="container mx-auto px-4 flex items-center gap-150">
+      <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-8">
           <h1
             onClick={() => navigate("/")}
