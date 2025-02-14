@@ -10,6 +10,10 @@ export default function Shop() {
   const products = useStore((state) => state.products);
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8; // Define how many products per page
+
   const filteredProducts = useMemo(
     () =>
       products.filter(
@@ -20,13 +24,34 @@ export default function Shop() {
     [products, searchQuery]
   );
 
+  // Paginated products to display
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  // Change page
+  const handleNext = () => {
+    if (currentPage * productsPerPage < filteredProducts.length) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#F5D7DB] pt-20">
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-8 pt-20">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <h1 className="text-3xl font-bold text-gray-800">All Products</h1>
-          <div className="flex w-full md:w-auto gap-2">
+          <div className="flex w-full md:w-auto flex-col gap-2">
             <input
               type="text"
               placeholder="Search products..."
@@ -45,7 +70,7 @@ export default function Shop() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          {filteredProducts.map((product) => (
+          {currentProducts.map((product) => (
             <div
               key={product.id}
               className="bg-white rounded-lg shadow-md overflow-hidden"
@@ -73,6 +98,24 @@ export default function Shop() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Pagination Buttons */}
+        <div className="flex justify-between items-center mt-8">
+          <button
+            onClick={handlePrev}
+            className="px-4 py-2 bg-darkBlue text-white rounded-md disabled:opacity-50"
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNext}
+            className="px-4 py-2 bg-darkBlue text-white rounded-md disabled:opacity-50"
+            disabled={currentPage * productsPerPage >= filteredProducts.length}
+          >
+            Next
+          </button>
         </div>
       </main>
       <Footer />
