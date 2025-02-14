@@ -4,7 +4,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4">EcoShop</h3>
+            <h3 className="text-xl font-bold mb-4">ShopVerse</h3>
             <p className="text-gray-600">
               Your one-stop shop for quality products at great prices.
             </p>
@@ -35,7 +35,7 @@ export function Footer() {
             <p className="text-gray-600">
               Email: support@Shopverse.com
               <br />
-              Phone: (555) 1230-4567
+              Phone: (+234) 81-4633-0337
             </p>
           </div>
         </div>
