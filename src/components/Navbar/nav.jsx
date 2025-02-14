@@ -10,29 +10,35 @@ export function Navbar() {
   const cartItemsCount = cart.reduce((total, item) => total + item.quantity, 0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Function to handle navigation and scroll to the top
+  const handleNavigate = (path) => {
+    navigate(path);
+    window.scrollTo(0, 0); // Scroll to the top of the page after navigation
+  };
+
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md py-4">
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo and Desktop Navigation Section */}
-        <div className="flex items-center space-x-4 lg:space-x-6"> {/* Adjusted space between items */}
+        <div className="flex items-center space-x-4 lg:space-x-6">
           <h1
-            onClick={() => navigate("/")}
+            onClick={() => handleNavigate("/")}
             className="text-2xl font-bold cursor-pointer text-gray-800 hover:text-primary transition-colors"
           >
             <Logo />
           </h1>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-4 lg:space-x-6"> {/* Closer to the Logo */}
+          <div className="hidden lg:flex items-center space-x-4 lg:space-x-6">
             <button
-              onClick={() => navigate("/shop")}
+              onClick={() => handleNavigate("/shop")}
               className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors"
             >
               <Store size={20} />
               <span>Shop</span>
             </button>
             <button
-              onClick={() => navigate("/admin-dashboard")}
+              onClick={() => handleNavigate("/admin-dashboard")}
               className="text-gray-600 hover:text-primary transition-colors"
             >
               Admin
@@ -49,7 +55,7 @@ export function Navbar() {
 
         {/* Cart Section */}
         <button
-          onClick={() => navigate("/cart")}
+          onClick={() => handleNavigate("/cart")}
           className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors"
         >
           <ShoppingCart size={20} />
@@ -59,13 +65,15 @@ export function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`lg:hidden ${isMenuOpen ? "block" : "hidden"} bg-white shadow-md py-4`}
+        className={`lg:hidden ${
+          isMenuOpen ? "block" : "hidden"
+        } bg-white shadow-md py-4`}
       >
         <div className="flex flex-col items-center space-y-4">
           <button
             onClick={() => {
               setIsMenuOpen(false);
-              navigate("/shop");
+              handleNavigate("/shop");
             }}
             className="text-gray-600 hover:text-primary transition-colors"
           >
@@ -74,7 +82,7 @@ export function Navbar() {
           <button
             onClick={() => {
               setIsMenuOpen(false);
-              navigate("/admin-dashboard");
+              handleNavigate("/admin-dashboard");
             }}
             className="text-gray-600 hover:text-primary transition-colors"
           >
@@ -83,7 +91,7 @@ export function Navbar() {
           <button
             onClick={() => {
               setIsMenuOpen(false);
-              navigate("/cart");
+              handleNavigate("/cart");
             }}
             className="flex items-center space-x-2 text-gray-600 hover:text-primary transition-colors"
           >
