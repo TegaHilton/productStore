@@ -97,34 +97,36 @@ export default function Admin() {
     <div className="min-h-screen flex flex-col bg-[#F2F4F6] pt-20">
       <Navbar />
       <main className="flex-grow container mx-auto px-4 py-8 pt-20">
-        <div className="flex flex-col md:flex-row items-center  gap-4">
-          <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
+        <div className="flex flex-col items-center gap-4 md:flex-row md:justify-between md:gap-6 p-4">
+          <h1 className="text-3xl font-bold text-gray-800 text-center md:text-left">
+            Admin Dashboard
+          </h1>
           <button
             onClick={() => {
               logout();
               navigate("/admin-login");
             }}
-            className="px-4 py-2 font-medium transition-all duration-200 btn-secondary bg-warmOrange text-white p-2 rounded-md"
+            className="px-4 py-2 font-medium transition-all duration-200 btn-secondary bg-warmOrange text-white rounded-md w-full md:w-auto"
           >
             Logout
           </button>
         </div>
 
-        <div className="flex gap-4 md:w-auto w-full mb-4 ml-auto justify-end">
-          <div className="flex flex-grow md:flex-grow-0 gap-2 ">
+        <div className="flex flex-col md:flex-row gap-4 md:w-auto w-full mb-4 ml-auto justify-end">
+          <div className="flex flex-col md:flex-row gap-2 w-full md:w-auto">
             <input
               type="text"
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-grow md:w-64 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#AFC9DC]"
+              className="flex-grow md:w-64 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#AFC9DC] w-full"
             />
-            <button className="btn btn-primary flex items-center gap-2 bg-darkBlue text-white p-2 rounded-md">
+            <button className="btn btn-primary flex items-center gap-2 bg-darkBlue text-white p-2 rounded-md mt-2 md:mt-0 w-full md:w-auto">
               <Search size={20} /> Search
             </button>
             <button
               onClick={() => setIsEditing(true)}
-              className="btn btn-primary whitespace-nowrap bg-darkBlue text-white p-2 rounded-md"
+              className="btn btn-primary whitespace-nowrap bg-darkBlue text-white p-2 rounded-md mt-2 md:mt-0 w-full md:w-auto"
             >
               Add New Product
             </button>
