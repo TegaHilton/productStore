@@ -32,16 +32,18 @@ export default function Shop() {
     indexOfLastProduct
   );
 
-  // Change page
+  // Change page and scroll to top
   const handleNext = () => {
     if (currentPage * productsPerPage < filteredProducts.length) {
       setCurrentPage(currentPage + 1);
+      window.scrollTo(0, 0); // Scroll to the top of the page after changing the page
     }
   };
 
   const handlePrev = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0); // Scroll to the top of the page after changing the page
     }
   };
 
@@ -51,17 +53,17 @@ export default function Shop() {
       <main className="flex-grow container mx-auto px-4 py-8 pt-20">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
           <h1 className="text-3xl font-bold text-gray-800">All Products</h1>
-          <div className="flex w-full md:w-auto flex-col gap-2">
+          <div className="flex flex-col sm:flex-row w-full gap-2 sm:w-auto">
             <input
               type="text"
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="flex-grow md:w-64 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#06143E]"
+              className="flex-grow sm:w-64 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#06143E]"
             />
             <button
               onClick={() => setSearchQuery(searchQuery)}
-              className="px-4 py-2 rounded-lg font-medium transition-all duration-200 btn-primary flex items-center gap-2 bg-darkBlue text-white"
+              className="w-full sm:w-auto px-4 py-2 rounded-lg font-medium transition-all duration-200 btn-primary flex items-center gap-2 bg-darkBlue text-white"
             >
               <Search size={20} />
               Search
