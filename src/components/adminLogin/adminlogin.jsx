@@ -32,7 +32,7 @@ export default function AdminLogin() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F5D7DB]">
       <Navbar />
-      <main className="flex-grow container mx-auto px-4 py-8 pt-20 flex items-center justify-center">
+      <main className="flex-grow container mx-auto px-4 py-8 pt-36 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
           <h1 className="text-3xl font-bold text-[#06143E] mb-6 text-center">
             Admin Login
