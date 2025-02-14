@@ -14,7 +14,7 @@ export default function App() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="relative h-[600px] mb-12 overflow-hidden">
+        <section className="relative h-[600px] mb-12 overflow-hidden pt-24 sm:pt-32">
           <div className="absolute inset-0 pt-28">
             <img
               src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=2070"
@@ -25,23 +25,29 @@ export default function App() {
           </div>
           <div className="relative h-full container mx-auto px-4 flex items-center">
             <div className="max-w-2xl">
-              <h1 className="text-6xl font-bold mb-6 text-[#F2F4F6] leading-tight animate-fade-in">
+              {/* Reduced text size on small screens */}
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-[#F2F4F6] leading-tight animate-fade-in">
                 Discover Your Perfect Style
               </h1>
-              <p className="text-xl mb-8 text-[#F2F4F6]/90 max-w-xl animate-fade-in-delay">
+
+              {/* Reduced text size on small screens */}
+              <p className="text-base sm:text-xl mb-8 text-[#F2F4F6]/90 max-w-xl animate-fade-in-delay">
                 Explore our curated collection of premium products. From fashion
                 to electronics, find everything you need in one place.
               </p>
+
               <div className="flex gap-4 animate-fade-in-delay-2">
+                {/* Reduced button padding on small screens */}
                 <button
                   onClick={() => navigate("/shop")}
-                  className="px-4 py-2 rounded-lg font-medium transition-all duration-200 bg-[#AFC9DC] hover:bg-[#F2F4F6] text-gray-800 px-8 py-3 rounded-full transition-all transform hover:scale-105"
+                  className="px-3 py-2 sm:px-8 sm:py-3 rounded-lg font-medium transition-all duration-200 bg-[#AFC9DC] hover:bg-[#F2F4F6] text-gray-800 rounded-full transform hover:scale-105"
                 >
                   Shop Now
                 </button>
+
                 <button
                   onClick={() => navigate("/shop")}
-                  className="btn border-2 border-[#F2F4F6] text-[#F2F4F6] hover:bg-[#F2F4F6] hover:text-gray-800 px-8 py-3 rounded-full transition-all transform hover:scale-105"
+                  className="btn border-2 border-[#F2F4F6] text-[#F2F4F6] hover:bg-[#F2F4F6] hover:text-gray-800 px-3 py-2 sm:px-8 sm:py-3 rounded-full transition-all transform hover:scale-105"
                 >
                   View Collections
                 </button>
@@ -302,15 +308,15 @@ export default function App() {
             <p className="text-gray-300 mb-6">
               Subscribe to our newsletter for exclusive offers and updates
             </p>
-            <form className="max-w-md mx-auto flex gap-4">
+            <form className="max-w-md mx-auto flex flex-col sm:flex-row gap-4 w-full">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-2 rounded-lg text-black"
+                className="flex-grow px-2 py-2 rounded-lg text-black"
               />
               <button
                 type="submit"
-                className="btn bg-[#F1916D] hover:bg-[#BD83B8] text-white whitespace-nowrap p-2 rounded-md"
+                className="w-full sm:w-auto max-w-xs hover:bg-[#BD83B8] text-white whitespace-nowrap p-2 rounded-md bg-[#F1916D] mt-4 sm:mt-0"
               >
                 Subscribe
               </button>
